@@ -29,7 +29,7 @@
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="dashboard">IndoScape</a>
+                <a class="navbar-brand" href="dashboard">Shelter Monitoring System</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -83,27 +83,26 @@
                                     data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Tables</a>
                                 <div id="submenu-5" class="collapse submenu show" style="">
                                     <ul class="nav flex-column">
-                                        <li class="nav-item">
+                                    <li class="nav-item">
                                             <a class="nav-link" href="tableuser">Data
                                                 User</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Data
-                                                Kota</a>
+                                            <a class="nav-link" href="shelter">Data
+                                                Shelter</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Data
-                                                Tempat Wisata</a>
+                                            <a class="nav-link" href="wisatalist">Data
+                                                Device/Perangkat</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="hostlist">Data
-                                                Tempat Penginapan Host</a>
+                                            <a class="nav-link" href="penginapanlist">Data
+                                                Site</a>
                                         </li>
                                         
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Data
-                                                Transaksi</a>
-                                        </li>
+                                            <a class="nav-link" href="#">MAP</a>
+                                        </li>  
                                         
                                     </ul>
                                 </div>
@@ -128,14 +127,14 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">Customer</h2>
+                                <h2 class="pageheader-title">Form Site</h2>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Tables</a></li>
-                                            <li class="breadcrumb-item"><a href="table_customer.php" class="breadcrumb-link">Data
-                                                    Customer</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page"></li>Form City
+                                            <li class="breadcrumb-item"><a href="dashboard" class="breadcrumb-link">Tables</a></li>
+                                            <li class="breadcrumb-item"><a href="penginapanlist" class="breadcrumb-link">Data
+                                            Site</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page"></li>Form Tambah Site
                                         </ol>
                                     </nav>
                                 </div>
@@ -145,36 +144,56 @@
 
                     <div class="col-xl-12">
                         <div class="card">
-                            <h5 class="card-header">Data City</h5>
+                            <h5 class="card-header">Data Site</h5>
                             <div class="card-body">
-                                <form  action="/api/addcity" method="POST" enctype="multipart/form-data">
+                                <form  action="/api/addpenginapan" method="POST" enctype="multipart/form-data">
                                   @csrf
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">City Name</label>
+                                        <label class="col-md-3 col-form-label">Nama Kota</label>
                                         <div class="col-md-9">
                                             <input type="text" class="form-control" id="namecity" name="namecity" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">City Province</label>
+                                        <label class="col-md-3 col-form-label">Nama Tempat Wisata</label>
                                         <div class="col-md-9">
-                                            <input type="text" name="nameprovince" id="nameprovince" class="form-control" 
-                                           required>
+                                            <input type="text" class="form-control" id="tempatwisata" name="tempatwisata" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Image</label>
+                                        <label class="col-md-3 col-form-label">Gambar</label>
                                         <div class="col-md-9">
                                             <input type="file" accept="image/png, image/jpeg" class="form-control" id="image" name="image" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label">Nama Tempat Penginapan</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" id="penginapan" name="penginapan" required> 
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label">Harga</label>
+                                        <div class="col-md-9">
+                                            <input type="number" name="harga" id="harga" class="form-control" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label">Deskripsi</label>
+                                        <div class="col-md-9">
+                                        <textarea name="deskripsi" id="deskripsi" cols="30" rows="10" class="form-control" required></textarea>
                                         </div>
                                     </div>
 
                                     <div class="form-group row mt-5">
                                         <div class="col-md-6">
                                             <!-- back to home -->
-                                            <a name="backBtn" id="backBtn" class="btn btn-dark btn-block btn-lg" href="#"
+                                            <a name="backBtn" id="backBtn" class="btn btn-dark btn-block btn-lg" href="penginapanlist"
                                                 role="button">Kembali</a>
                                         </div>
 

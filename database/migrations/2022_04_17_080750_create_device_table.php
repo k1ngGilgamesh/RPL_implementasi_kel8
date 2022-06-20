@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('city', function (Blueprint $table) {
+        Schema::create('wisata', function (Blueprint $table) {
             $table->id();
-            $table->string('namecity')->unique();
-            $table->string('nameprovince');
             $table->string('image');
+            $table->string('namecity');
+            $table->string('nameplace');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('city');
+        Schema::dropIfExists('wisata');
     }
 };

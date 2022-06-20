@@ -29,7 +29,7 @@
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="dashboard">IndoScape</a>
+                <a class="navbar-brand" href="dashboard">Shelter Monitoring System</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -83,27 +83,45 @@
                                     data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Tables</a>
                                 <div id="submenu-5" class="collapse submenu show" style="">
                                     <ul class="nav flex-column">
-                                        <li class="nav-item">
+                                    <li class="nav-item">
                                             <a class="nav-link" href="tableuser">Data
                                                 User</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Data
-                                                Kota</a>
+                                            <a class="nav-link" href="kota">Data
+                                                Shelter</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Data
-                                                Tempat Wisata</a>
+                                            <a class="nav-link" href="wisatalist">Data
+                                                Device/Perangkat</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="hostlist">Data
-                                                Tempat Penginapan Host</a>
+                                            <a class="nav-link" href="penginapanlist">Data
+                                                Site</a>
                                         </li>
                                         
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Data
-                                                Transaksi</a>
-                                        </li>                                       
+                                            <a class="nav-link" href="#">MAP</a>
+                                        </li> <li class="nav-item">
+                                            <a class="nav-link" href="tableuser">Data
+                                                User</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="kota">Data
+                                                Shelter</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="wisatalist">Data
+                                                Device/Perangkat</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="penginapanlist">Data
+                                                Site</a>
+                                        </li>
+                                        
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">MAP</a>
+                                        </li>                              
                                     </ul>
                                 </div>
                             </li>
@@ -131,10 +149,10 @@
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Tables</a></li>
-                                            <li class="breadcrumb-item"><a href="table_customer.php" class="breadcrumb-link">Data
-                                                    Customer</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page"></li>Form Host
+                                            <li class="breadcrumb-item"><a href="dashboard" class="breadcrumb-link">Tables</a></li>
+                                            <li class="breadcrumb-item"><a href="wisatalist" class="breadcrumb-link">Data
+                                                    Wisata</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page"></li>Form Edit Wisata
                                         </ol>
                                     </nav>
                                 </div>
@@ -144,50 +162,51 @@
 
                     <div class="col-xl-12">
                         <div class="card">
-                            <h5 class="card-header">Data Host</h5>
+                            <h5 class="card-header">Editwisata</h5>
                             <div class="card-body">
-                                <form action="/api/editplace" method="PUT" enctype="multipart/form-data">
+                                <form action="/api/editwisata" method="POST" enctype="multipart/form-data">
                                   @csrf
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">ID Host</label>
+                                  @method('PUT')
+
+                                  <div class="form-group row">
+                                        <label class="col-md-3 col-form-label">ID Wisata</label>
                                         <div class="col-md-9">
-                                            <input type="text" name="id" id="id" class="form-control" >
+                                            <input type="text" name="id" id="id" class="form-control" value="{{$wisata->id}}" readonly>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label">Image</label>
+                                        <div class="col-md-9">
+                                            <input type="file" accept="image/png, image/jpeg" class="form-control" id="image" name="image" required>
+                                        </div>
+                                    </div>
+
+                                  <div class="form-group row">
+                                        <label class="col-md-3 col-form-label">Nama Kota</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" id="namecity" name="namecity" value="{{$wisata->namecity}}" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Place Name</label>
+                                        <label class="col-md-3 col-form-label">Tempat Wisata</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" id="name" name="name" required>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Price</label>
-                                        <div class="col-md-9">
-                                            <input type="number" name="price" id="price" class="form-control" 
+                                            <input type="text" name="nameplace" id="nameplace" class="form-control" value="{{$wisata->nameplace}}"
                                            required>
                                         </div>
                                     </div>
 
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Description</label>
-                                        <div class="col-md-9">
-                                            <textarea name="description" id="description" cols="30" rows="10" class="form-control"
-                                             required></textarea>
-                                        </div>
-                                    </div>
-
-
+                                    
                                     <div class="form-group row mt-5">
                                         <div class="col-md-6">
                                             <!-- back to home -->
-                                            <a name="backBtn" id="backBtn" class="btn btn-dark btn-block btn-lg" href="#"
-                                                role="button">Kembali</a>
+                                            <a name="backBtn" id="backBtn" class="btn btn-dark btn-block btn-lg" 
+                                            href="javascript:javascript:history.go(-1)" role="button">Kembali</a>
                                         </div>
 
                                         <div class="col-md-6">
-                                            <input type="submit" class="btn btn-success btn-block btn-lg" value="Edit" />
+                                            <button type="submit" class="btn btn-success btn-block btn-lg">Edit</button>
                                         </div>
                                     </div>
                                 </form>

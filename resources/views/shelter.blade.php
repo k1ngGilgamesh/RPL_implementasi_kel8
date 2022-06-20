@@ -76,11 +76,10 @@
                                             <span class="badge badge-success">6</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                                        <a class="nav-link" href="dashboard" data-toggle="collapse" aria-expanded="false"
                                             data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Tables</a>
                                         <div id="submenu-5" class="collapse submenu">
                                             <ul class="nav flex-column">
-                                            
                                             <li class="nav-item">
                                             <a class="nav-link" href="tableuser">Data
                                                 User</a>
@@ -124,12 +123,12 @@
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <div class="page-header">
-                                        <h2 class="pageheader-title">User</h2>
+                                        <h2 class="pageheader-title">Shelter</h2>
                                         <div class="page-breadcrumb">
                                             <nav aria-label="breadcrumb">
                                                 <ol class="breadcrumb">
                                                     <li class="breadcrumb-item"><a href="dashboard" class="breadcrumb-link">Tables</a></li>
-                                                    <li class="breadcrumb-item active" aria-current="page">Data User</li>
+                                                    <li class="breadcrumb-item active" aria-current="page">Data Shelter</li>
                                                 </ol>
                                             </nav>
                                         </div>
@@ -139,34 +138,51 @@
         
                             <div class="col-xl-12">
                                 <div class="card">
-                                    <h5 class="card-header">Data User</h5>
+                                    <h5 class="card-header">Data Shelter</h5>
                                     <div class="card-body">
+                                        <a href="tambahShelter" class="btn btn-primary">Tambah Data</a>
+                                        @if ($message = Session::get('success'))
+                                        <div class="alert alert-success mt-2" role="alert">
+                                            {{ $message }}
+                                        </div>
+                                        @endif
+                                        <br><br>
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>#</th>
-                                                    <th>ID Customer</th>
-                                                    <th>Nama</th>
-                                                    <th>Email</th>
-                                                    <th>Action</th>
+                                                    <th>id</th>
+                                                    <th>Gambar</th>
+                                                    <th>Shelter</th>
+                                                    <th>Lokasi</th>
+                                                    <th>Time Created</th>
+                                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @php
+                                            @php
                                                 $no = 1;
                                                 @endphp
-                                                @foreach ($user as $row)
+                                                @foreach ($shelter as $row)
                                                 <tr>
                                                     <th scope="row">{{ $no++ }}</th>
-                                                    <td>{{ $row->name }}</td>
-                                                    <td>{{ $row->email }}</td>
+                                                    <td>
+                                                        <img src="{{ asset('images/'. $row->image) }}"
+                                                            alt="" style="width: 8em;">
+                                                    </td>
+                                                    <td>{{ $row->nameshelter }}</td>
+                                                    <td>{{ $row->location }}</td>
                                                     <td>{{ $row->updated_at->format('D M Y') }}</td>
                                                     <td>{{ $row->updated_at->diffForHumans() }}</td>
-                                                    <td>
-                                                        <a href="/deletewisata/{{$row->id }}"
-                                                            class="btn btn-danger mb-1">Delete</a>
-                                                        <a href="/showwisata/{{$row->id }}"
-                                                            class="btn btn-primary">Edit</a>
+                                                    <td class="d-flex mt-3">
+                                                        <form action="/api/deleteshelter" method="POST" enctype="multipart/form-data">
+                                                            @method('DELETE')
+                                                            <input type="hidden" name="id" value="{{ $row->id }}">
+                                                            <button type="submit" class="btn btn-danger mr-1" style="width:80px">Delete</button>
+                                                        </form>
+                                                        <form action="/editshelter" method="GET" enctype="multipart/form-data">
+                                                            <input type="hidden" name="id" value="{{ $row->id }}">  
+                                                            <button type="submit" class="btn btn-primary" style="width:80px">Edit</button>
+                                                        </form>
                                                     </td>
                                                 </tr>
                                                 @endforeach

@@ -14,7 +14,7 @@
       <div class="container-fluid">
         <div class="row main-content bg-primary text-center">
           <div class="col-md-4 text-center company__info">
-            <h4 class="company_title">IndoScape</h4>
+            <h4 class="company_title">Shelter Monitoring System</h4>
           </div>
           <div class="col-md-8 col-xs-12 col-sm-12 login_form ">
             <div class="container-fluid">
@@ -40,7 +40,7 @@
                 </form>
               </div>
               <div class="row">
-                <p>Already have an account? <a href="login">Login Here</a></p>
+                <p>Only Admin can Login<a href="login">Login Here</a></p>
               </div>
             </div>
           </div>

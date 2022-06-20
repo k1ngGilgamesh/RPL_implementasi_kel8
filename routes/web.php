@@ -1,8 +1,9 @@
 <?php
-
-use App\Http\Controllers\City\CityController;
-use App\Http\Controllers\Host\HostController;
+use App\Http\Controllers\Penginapan\PenginapanController;
+use App\Http\Controllers\Wisata\WisataController;
+use App\Http\Controllers\Shelter\ShelterController;
 use App\Http\Controllers\User\UserController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,18 +24,27 @@ Route::get('/', function () {
 
 Route::get('home', [UserController::class,'getUser']);
 
-Route::get('host', [HostController::class,'getHost']);
-Route::get('hostlist', [HostController::class,'getHostList']);
+Route::get('penginapan', [PenginapanController::class,'getPenginapan']);
+Route::get('penginapanlist', [PenginapanController::class,'getPenginapanList']);
 
-Route::get('city', [CityController::class,'getCity']);
-Route::get('citylist', [CityController::class,'getCityList']);
+Route::get('wisata', [WisataController::class, 'getWisata']);
+Route::get('wisatalist', [WisataController::class, 'getWisataList']);
 
+
+Route::get('tambahShelter', [ShelterController::class,'getShelter']);
+Route::get('shelter', [ShelterController::class,'getShelterList']);
+Route::get('editshelter', [ShelterController::class,'editShelter']);
 
 Route::get('tableuser', [UserController::class,'getTableUser']);
 
-// Route::get('edithost', [HostController::class,'editHostList']);
+Route::get('edithost', [HostController::class,'editHost']);
+Route::get('editpenginapan', [PenginapanController::class,'editPenginapan']);
+
+Route::get('editwisata', [WisataController::class,'editWisata']);
 
 Route::get('dashboard', [UserController::class,'getaAdmin']);
+
+Route::get('map', [MapController::class,'getmap']);
 
 Route::get('/register', function () {
     return view('register');

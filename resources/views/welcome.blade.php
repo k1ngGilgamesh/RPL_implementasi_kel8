@@ -10,7 +10,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>IndoScape</title>
+    <title>Shelter Monitoring System</title>
 
 
     <!-- ===============================================-->
@@ -41,7 +41,7 @@
     <!-- ===============================================-->
     <main class="main" id="top">
       <nav class="navbar navbar-expand-lg fixed-top py-3 backdrop" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand d-flex align-items-center fw-bold fs-2" href="#"> <img class="d-inline-block align-top img-fluid" src="assets/img/gallery/logo-icon.png" alt="" width="50" /><span class="text-primary fs-4 ps-2">IndoScape</span></a>
+        <div class="container"><a class="navbar-brand d-flex align-items-center fw-bold fs-2" href="#"> <img src="img/Logo-rpl.PNG" width=100 /><span class="text-primary fs-4 ps-2">Shelter Monitoring System</span></a>
           <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0">
@@ -59,13 +59,13 @@
         <div class="container position-relative">
           <div class="row align-items-center min-vh-75 my-lg-8">
             <div class="col-md-7 col-lg-6 text-center text-md-start py-8">
-              <h1 class="mb-4 display-1 lh-sm">Buy Yourself  <br class="d-block d-lg-none d-xl-block" />The Freedom.</h1>
-              <p class="mt-4 mb-5 fs-1 lh-base">Plan and book your perfect homestead with expert advice, <br class="d-none d-lg-block" />travel tips, destination information and <br class="d-none d-lg-block" />inspiration from us.</p><a class="btn btn-lg btn-primary hover-top" href="register" role="button">Explore Now</a>
+              <h1 class="mb-4 display-1 lh-sm">Shelter Monitoring System  <br class="d-block d-lg-none d-xl-block" /></h1>
+              <p class="mt-4 mb-5 fs-1 lh-base">Monitoring Your energy <br class="d-none d-lg-block" />and shelter<br class="d-none d-lg-block" />inspiration from us.</p><a class="btn btn-lg btn-primary hover-top" href="register" role="button">Explore Now</a>
             </div>
           </div>
         </div>
       </section>
-
+s
     </main>
     <!-- ===============================================-->
     <!--    End of Main Content-->

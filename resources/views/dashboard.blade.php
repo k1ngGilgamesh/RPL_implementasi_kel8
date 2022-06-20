@@ -25,7 +25,7 @@
                 <!-- ============================================================== -->
                 <div class="dashboard-header">
                     <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                        <a class="navbar-brand" href="dashboard">IndoScapes</a>
+                        <a class="navbar-brand" href="dashboard">Shelter Monitoring System</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -59,7 +59,7 @@
                 <div class="nav-left-sidebar sidebar-dark">
                     <div class="menu-list">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                            <a class="d-xl-none d-lg-none" href="dashboard">Dashboard</a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
@@ -79,27 +79,26 @@
                                             data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Tables</a>
                                         <div id="submenu-5" class="collapse submenu">
                                             <ul class="nav flex-column">
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="tableuser">Data
-                                                        User</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="citylist">Data
-                                                        Kota</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#">Data
-                                                        Tempat Wisata</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="hostlist">Data
-                                                        Tempat Penginapan Host</a>
-                                                </li>
-                                                
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#">Data
-                                                        Transaksi</a>
-                                                </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="tableuser">Data
+                                                User</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="shelter">Data
+                                                Shelter</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="wisatalist">Data
+                                                Device/Perangkat</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="penginapanlist">Data
+                                                Site</a>
+                                        </li>
+                                        
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="map">MAP</a>
+                                        </li>
                                             </ul>
                                         </div>
                                     </li>
@@ -132,8 +131,7 @@
                                 <div class="card">
                                     <h3 class="card-header">Selamat Datang</h3>
                                     <div class="card-body">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum aliquam necessitatibus animi quia nemo amet omnis praesentium iure, vitae porro dolores rerum doloribus veritatis veniam laudantium dolorem ea sequi mollitia.</p>
-                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non delectus exercitationem dolorum placeat debitis error dignissimos perferendis, temporibus facere ipsa consequuntur neque nulla fugit, cum est illum molestias harum suscipit.</p>
+                                        <p>Selamat Datang di Dashboard</p>
                                     </div>
                                 </div>
                             </div>

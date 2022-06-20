@@ -26,7 +26,7 @@
                 <!-- ============================================================== -->
                 <div class="dashboard-header">
                     <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                        <a class="navbar-brand" href="dashboard">IndoScapes</a>
+                        <a class="navbar-brand" href="dashboard">Shelter Monitoring System</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -81,26 +81,26 @@
                                         <div id="submenu-5" class="collapse submenu">
                                             <ul class="nav flex-column">
                                             <li class="nav-item">
-                                                    <a class="nav-link" href="tableuser">Data
-                                                        User</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#">Data
-                                                        Kota</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#">Data
-                                                        Tempat Wisata</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="hostlist">Data
-                                                        Tempat Penginapan Host</a>
-                                                </li>
+                                            <a class="nav-link" href="tableuser">Data
+                                                User</a>
                                                 
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#">Data
-                                                        Transaksi</a>
-                                                </li>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="shelter">Data
+                                                Shelter</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="wisatalist">Data
+                                                Device/Perangkat</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="penginapanlist">Data
+                                                Site</a>
+                                        </li>
+                                        
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">MAP</a>
+                                        </li>
                                             </ul>
                                         </div>
                                     </li>
@@ -124,12 +124,12 @@
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <div class="page-header">
-                                        <h2 class="pageheader-title">User</h2>
+                                        <h2 class="pageheader-title">Data Site</h2>
                                         <div class="page-breadcrumb">
                                             <nav aria-label="breadcrumb">
                                                 <ol class="breadcrumb">
-                                                    <li class="breadcrumb-item"><a href="tableuser" class="breadcrumb-link">Tables</a></li>
-                                                    <li class="breadcrumb-item active" aria-current="page">Data Host</li>
+                                                    <li class="breadcrumb-item"><a href="dashboard" class="breadcrumb-link">Tables</a></li>
+                                                    <li class="breadcrumb-item active" aria-current="page">Data Site</li>
                                                 </ol>
                                             </nav>
                                         </div>
@@ -139,9 +139,9 @@
         
                             <div class="col-xl-12">
                                 <div class="card">
-                                    <h5 class="card-header">Data Host</h5>
+                                    <h5 class="card-header">Data Site</h5>
                                     <div class="card-body">
-                                        <a href="host" class="btn btn-primary">Tambah Data</a>
+                                        <a href="penginapan" class="btn btn-primary">Tambah Data</a>
                                         @if ($message = Session::get('success'))
                                         <div class="alert alert-success mt-2" role="alert">
                                             {{ $message }}
@@ -151,10 +151,13 @@
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
+                                                    
                                                     <th>#</th>
+                                                    <th>Nama Site</th>
+                                                    <th>Lokasi Site</th>
                                                     <th>Gambar</th>
-                                                    <th>Nama Tempat</th>
-                                                    <th>Harga</th>
+                                                    <th>isi Device</th>
+                                                    <th>Coordinate</th>
                                                     <th>Description</th>
                                                 </tr>
                                             </thead>
@@ -162,23 +165,32 @@
                                                 @php
                                                 $no = 1;
                                                 @endphp
-                                                @foreach ($user as $row)
+                                                @foreach ($penginapan as $row)
                                                 <tr>
                                                     <th scope="row">{{ $no++ }}</th>
+                                                    
+                                                    <td>{{ $row->namecity }}</td>
+                                                    <td>{{ $row->tempatwisata }}</td>
                                                     <td>
                                                         <img src="{{ asset('images/'. $row->image) }}"
                                                             alt="" style="width: 8em;">
                                                     </td>
-                                                    <td>{{ $row->name }}</td>
-                                                    <td>{{ $row->description }}</td>
-                                                    <td>{{ $row->price }}</td>
+                                                    <td>{{ $row->penginapan }}</td>
+                                                    <td>{{ $row->harga }}</td>
+                                                    <td>{{ $row->deskripsi }}</td>
                                                     <td>{{ $row->updated_at->format('D M Y') }}</td>
                                                     <td>{{ $row->updated_at->diffForHumans() }}</td>
                                                     <td>
-                                                        <a href="/deletewisata/{{$row->id }}"
-                                                            class="btn btn-danger mb-1">Delete</a>
-                                                        <a href="edithost"
-                                                            class="btn btn-primary">Edit</a>
+                                                        <form action="/api/deletepenginapan" method="POST" enctype="multipart/form-data">
+                                                            @method('DELETE')
+                                                            <input type="hidden" name="id" value="{{ $row->id }}">
+                                                            <button type="submit" class="btn btn-danger mb-1" href="penginapanlist">DELETE</button>
+                                                        </form>
+                                                        <form action="/editpenginapan" method="GET" enctype="multipart/form-data">
+                                                            
+                                                            <input type="hidden" name="id" value="{{ $row->id }}">
+                                                            <button type="submit" class="btn btn-primary">Edit</button>
+                                                         </form>
                                                     </td>
                                                 </tr>
                                                 @endforeach

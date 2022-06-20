@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('hosts', function (Blueprint $table) {
+        Schema::create('penginapan', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->integer('price');
-            $table->string('description');
+            $table->string('namecity');
+            $table->string('tempatwisata');
             $table->string('image');
-            $table->rememberToken();
+            $table->string('penginapan');
+            $table->integer('harga');
+            $table->string('deskripsi');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hosts');
+        Schema::dropIfExists('penginapan');
     }
 };

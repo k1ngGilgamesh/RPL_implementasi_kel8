@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -37,16 +36,16 @@
 
                                 </li>
                                 <form class="ps-lg-5" action="/api/logout" method="POST">
-                                    <li class="nav-item dropdown nav-user">
-                                        <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false"><img src="img/avatar.png"
-                                                alt="" class="user-avatar-md rounded-circle">&nbsp;&nbsp;&nbsp;Admin <i
-                                                class="fas fa-angle-down"></i></a>
-                                        <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
-                                        <button class="dropdown-item" type="submit"><i class="fas fa-power-off mr-2"></i>Logout</button>
-                                        </div>
-                                    </li>
-                                </form>
+                                <li class="nav-item dropdown nav-user">
+                                    <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false"><img src="img/avatar.png"
+                                            alt="" class="user-avatar-md rounded-circle">&nbsp;&nbsp;&nbsp;Admin <i
+                                            class="fas fa-angle-down"></i></a>
+                                    <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                    <button class="dropdown-item" type="submit"><i class="fas fa-power-off mr-2"></i>Logout</button>
+                                    </div>
+                                </li>
+                            </form>
                             </ul>
                         </div>
                     </nav>
@@ -80,7 +79,6 @@
                                             data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Tables</a>
                                         <div id="submenu-5" class="collapse submenu">
                                             <ul class="nav flex-column">
-                                            
                                             <li class="nav-item">
                                             <a class="nav-link" href="tableuser">Data
                                                 User</a>
@@ -124,54 +122,16 @@
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <div class="page-header">
-                                        <h2 class="pageheader-title">User</h2>
-                                        <div class="page-breadcrumb">
-                                            <nav aria-label="breadcrumb">
-                                                <ol class="breadcrumb">
-                                                    <li class="breadcrumb-item"><a href="dashboard" class="breadcrumb-link">Tables</a></li>
-                                                    <li class="breadcrumb-item active" aria-current="page">Data User</li>
-                                                </ol>
-                                            </nav>
-                                        </div>
+                                        <h2 class="pageheader-title">Dashboard</h2>
                                     </div>
                                 </div>
                             </div>
-        
+
                             <div class="col-xl-12">
                                 <div class="card">
-                                    <h5 class="card-header">Data User</h5>
+                                    <h3 class="card-header">Selamat Datang</h3>
                                     <div class="card-body">
-                                        <table class="table table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>ID Customer</th>
-                                                    <th>Nama</th>
-                                                    <th>Email</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @php
-                                                $no = 1;
-                                                @endphp
-                                                @foreach ($user as $row)
-                                                <tr>
-                                                    <th scope="row">{{ $no++ }}</th>
-                                                    <td>{{ $row->name }}</td>
-                                                    <td>{{ $row->email }}</td>
-                                                    <td>{{ $row->updated_at->format('D M Y') }}</td>
-                                                    <td>{{ $row->updated_at->diffForHumans() }}</td>
-                                                    <td>
-                                                        <a href="/deletewisata/{{$row->id }}"
-                                                            class="btn btn-danger mb-1">Delete</a>
-                                                        <a href="/showwisata/{{$row->id }}"
-                                                            class="btn btn-primary">Edit</a>
-                                                    </td>
-                                                </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
+                                        <p>Selamat Datang di Dashboard</p>
                                     </div>
                                 </div>
                             </div>

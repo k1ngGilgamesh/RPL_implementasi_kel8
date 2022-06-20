@@ -29,7 +29,7 @@
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="dashboard">IndoScape</a>
+                <a class="navbar-brand" href="dashboard">Shelter Monitoring System</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -63,7 +63,7 @@
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <a class="d-xl-none d-lg-none" href="dashboard">Dashboard</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -79,30 +79,29 @@
                                     <span class="badge badge-success">6</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false"
+                                <a class="nav-link active" href="dashboard" data-toggle="collapse" aria-expanded="false"
                                     data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Tables</a>
                                 <div id="submenu-5" class="collapse submenu show" style="">
                                     <ul class="nav flex-column">
-                                        <li class="nav-item">
+                                    <li class="nav-item">
                                             <a class="nav-link" href="tableuser">Data
                                                 User</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Data
-                                                Kota</a>
+                                            <a class="nav-link" href="shelter">Data
+                                                Shelter</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Data
-                                                Tempat Wisata</a>
+                                            <a class="nav-link" href="wisatalist">Data
+                                                Device/Perangkat</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="hostlist">Data
-                                                Tempat Penginapan Host</a>
+                                            <a class="nav-link" href="penginapanlist">Data
+                                                Site</a>
                                         </li>
                                         
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Data
-                                                Transaksi</a>
+                                            <a class="nav-link" href="#">MAP</a>
                                         </li>
                                         
                                     </ul>
@@ -128,14 +127,14 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">Customer</h2>
+                                <h2 class="pageheader-title">shelter       </h2>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Tables</a></li>
-                                            <li class="breadcrumb-item"><a href="table_customer.php" class="breadcrumb-link">Data
-                                                    Customer</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page"></li>Form Host
+                                            <li class="breadcrumb-item"><a href="dashboard" class="breadcrumb-link">Tables</a></li>
+                                            <li class="breadcrumb-item"><a href="kota" class="breadcrumb-link">Data
+                                            shelter</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page"></li>Form shelter
                                         </ol>
                                     </nav>
                                 </div>
@@ -145,49 +144,49 @@
 
                     <div class="col-xl-12">
                         <div class="card">
-                            <h5 class="card-header">Data Host</h5>
+                            <h5 class="card-header">Data shelter</h5>
                             <div class="card-body">
-                                <form  action="/api/addplace" method="POST" enctype="multipart/form-data">
+                                <form  action="/api/editshelter" method="POST" enctype="multipart/form-data">
                                   @csrf
+                                  @method('PUT')
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Place Name</label>
+                                        <label class="col-md-3 col-form-label">ID shelter</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" id="name" name="name" required>
+                                            <input type="text" name="id" id="id" class="form-control" value="{{$shelter->id}}" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label">Nama Kota</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" id="nameshelter" name="nameshelter" value="{{$shelter->nameshelter}}" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Price</label>
+                                        <label class="col-md-3 col-form-label">Nama Provinsi</label>
                                         <div class="col-md-9">
-                                            <input type="number" name="price" id="price" class="form-control" 
-                                           required>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Description</label>
-                                        <div class="col-md-9">
-                                            <textarea name="description" id="description" cols="30" rows="10" class="form-control"
-                                             required></textarea>
+                                            <input type="text" name="location" id="location" class="form-control" value="{{$shelter->location}}" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label">Image</label>
                                         <div class="col-md-9">
-                                            <input type="file" accept="image/png, image/jpeg" class="form-control" id="image" name="image" required>
-                                        </div>
+                                        <img src="{{ asset('images/'. $shelter->image) }}"
+                                            alt="" style="width: 8em;">
+                                        <input type="file" accept="image/png, image/jpeg"  id="image" name="image" value="{{$shelter->image}}" required>
+                                    </div>
                                     </div>
 
                                     <div class="form-group row mt-5">
                                         <div class="col-md-6">
                                             <!-- back to home -->
-                                            <a name="backBtn" id="backBtn" class="btn btn-dark btn-block btn-lg" href="#"
-                                                role="button">Kembali</a>
+                                            <a name="backBtn" id="backBtn" class="btn btn-dark btn-block btn-lg" 
+                                            href="javascript:javascript:history.go(-1)" role="button">Kembali</a>
                                         </div>
 
                                         <div class="col-md-6">
-                                            <input type="submit" class="btn btn-success btn-block btn-lg" value="Tambah" />
+                                            <button type="submit" class="btn btn-success btn-block btn-lg">Edit</button>
                                         </div>
                                     </div>
                                 </form>
