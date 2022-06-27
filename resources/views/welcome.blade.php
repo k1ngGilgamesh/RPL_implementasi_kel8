@@ -52,15 +52,16 @@
         </div>
       </nav>
       <section class="py-0">
-        <div class="bg-holder d-none d-md-block" style="background-image:url(assets/img/illustrations/hero.png);background-position:right bottom;background-size:contain;">
+        <div class="bg-holder d-none d-md-block" style="
+        ">
         </div>
         <!--/.bg-holder-->
 
         <div class="container position-relative">
           <div class="row align-items-center min-vh-75 my-lg-8">
             <div class="col-md-7 col-lg-6 text-center text-md-start py-8">
-              <h1 class="mb-4 display-1 lh-sm">Shelter Monitoring System  <br class="d-block d-lg-none d-xl-block" /></h1>
-              <p class="mt-4 mb-5 fs-1 lh-base">Monitoring Your energy <br class="d-none d-lg-block" />and shelter<br class="d-none d-lg-block" />inspiration from us.</p><a class="btn btn-lg btn-primary hover-top" href="register" role="button">Explore Now</a>
+              <h1 class="mb-4 display-1 lh-sm">Shelter Monitoring System </h1>
+              <p class="mt-4 mb-5 fs-1 lh-base">Monitoring Your energy <br class="d-none d-lg-block" />and shelter<br class="d-none d-lg-block" /></p><a class="btn btn-lg btn-primary hover-top" href="register" role="button">Explore Now</a>
             </div>
           </div>
         </div>

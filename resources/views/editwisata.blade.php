@@ -99,26 +99,6 @@
                                             <a class="nav-link" href="penginapanlist">Data
                                                 Site</a>
                                         </li>
-                                        
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">MAP</a>
-                                        </li> <li class="nav-item">
-                                            <a class="nav-link" href="tableuser">Data
-                                                User</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="kota">Data
-                                                Shelter</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="wisatalist">Data
-                                                Device/Perangkat</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="penginapanlist">Data
-                                                Site</a>
-                                        </li>
-                                        
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">MAP</a>
                                         </li>                              
@@ -145,14 +125,14 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">Customer</h2>
+                                <h2 class="pageheader-title">Data Form Edit</h2>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="dashboard" class="breadcrumb-link">Tables</a></li>
                                             <li class="breadcrumb-item"><a href="wisatalist" class="breadcrumb-link">Data
-                                                    Wisata</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page"></li>Form Edit Wisata
+                                                    Device</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page"></li>Form Edit
                                         </ol>
                                     </nav>
                                 </div>
@@ -169,7 +149,7 @@
                                   @method('PUT')
 
                                   <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">ID Wisata</label>
+                                        <label class="col-md-3 col-form-label">ID Device</label>
                                         <div class="col-md-9">
                                             <input type="text" name="id" id="id" class="form-control" value="{{$wisata->id}}" readonly>
                                         </div>
@@ -183,14 +163,14 @@
                                     </div>
 
                                   <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Nama Kota</label>
+                                        <label class="col-md-3 col-form-label">Nama Device</label>
                                         <div class="col-md-9">
                                             <input type="text" class="form-control" id="namecity" name="namecity" value="{{$wisata->namecity}}" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Tempat Wisata</label>
+                                        <label class="col-md-3 col-form-label">Fungsi</label>
                                         <div class="col-md-9">
                                             <input type="text" name="nameplace" id="nameplace" class="form-control" value="{{$wisata->nameplace}}"
                                            required>

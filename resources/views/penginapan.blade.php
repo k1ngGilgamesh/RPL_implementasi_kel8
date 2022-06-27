@@ -149,14 +149,14 @@
                                 <form  action="/api/addpenginapan" method="POST" enctype="multipart/form-data">
                                   @csrf
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Nama Kota</label>
+                                        <label class="col-md-3 col-form-label">Nama Site</label>
                                         <div class="col-md-9">
                                             <input type="text" class="form-control" id="namecity" name="namecity" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Nama Tempat Wisata</label>
+                                        <label class="col-md-3 col-form-label">Lokasi Site</label>
                                         <div class="col-md-9">
                                             <input type="text" class="form-control" id="tempatwisata" name="tempatwisata" required>
                                         </div>
@@ -170,14 +170,14 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Nama Tempat Penginapan</label>
+                                        <label class="col-md-3 col-form-label">Isi Device</label>
                                         <div class="col-md-9">
                                             <input type="text" class="form-control" id="penginapan" name="penginapan" required> 
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Harga</label>
+                                        <label class="col-md-3 col-form-label">Coordinate</label>
                                         <div class="col-md-9">
                                             <input type="number" name="harga" id="harga" class="form-control" required>
                                         </div>
